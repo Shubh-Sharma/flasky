@@ -66,7 +66,7 @@ class HerokuConfig(ProductionConfig):
 	SSL_DISABLE = bool(os.environ.get('SSL_DISABLE'))
 
 	@classmethod
-	def init_app(app):
+	def init_app(cls, app):
 		ProductionConfig.init_app(app)
 
 		# handle reverse proxy server headers
