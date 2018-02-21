@@ -6,9 +6,7 @@ import sendgrid
 import os
 from sendgrid.helpers.mail import *
 
-SENDGRID_API_KEY = "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"
-
-sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY', SENDGRID_API_KEY))
+sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY', "SENDGRID_API_KEY"))
 
 
 def send_async_email(app, mail):

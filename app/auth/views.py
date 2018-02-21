@@ -120,7 +120,9 @@ def password_reset_request():
 					   subject="Reset your password", 
 					   template="auth/email/reset_password", 
 					   user=user, token=token, next=request.args.get('next'))
-		flash("An email with instructions to reset your password has been sent to you.")
+			flash("An email with instructions to reset your password has been sent to you.")
+		else:
+			flash("User with this email is not registered.")
 		return redirect(url_for('auth.login'))
 	return render_template("auth/reset_password.html", form=form)
 
